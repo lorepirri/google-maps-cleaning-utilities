@@ -1,5 +1,5 @@
 // Google Location History
-// 1. Go to Location History, on your desktop
+// 1. Go to Location History https://www.google.com/maps/timeline
 // 2. Open the Developer tools (F12, on Firefox or Chrome)
 // 3. Open the Console tab
 // 4. Copy Paste this script
