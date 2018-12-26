@@ -14,6 +14,12 @@ More info in my blog post [Google Maps: automatically delete all your contributi
 
 - Use the code of this file: [pleaseDeleteContributionsPlease.js](https://raw.githubusercontent.com/lorepirri/google-maps-cleaning-utilities/master/pleaseDeleteContributionsPlease.js)
 
+## Delete all your Location History
+
+More info in my blog post [Google Maps: automatically delete all Location History](https://lorepirri.com/google-maps-delete-location-history.html).
+
+- Use the code of this file: [pleaseDeleteLocationHistoryPlease.js](https://raw.githubusercontent.com/lorepirri/google-maps-cleaning-utilities/master/pleaseDeleteLocationHistoryPlease.js)
+
 
 
 
