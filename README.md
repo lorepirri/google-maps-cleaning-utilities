@@ -16,6 +16,8 @@ More info in my blog post [Google Maps: automatically delete all your contributi
 
 ## Delete all your Location History
 
+This script is not really necessary, because there is an option "Delete all Location History" in the settings of the Location History. I leave it here anyway.
+
 More info in my blog post [Google Maps: automatically delete all Location History](https://lorepirri.com/google-maps-delete-location-history.html).
 
 - Use the code of this file: [pleaseDeleteLocationHistoryPlease.js](https://raw.githubusercontent.com/lorepirri/google-maps-cleaning-utilities/master/pleaseDeleteLocationHistoryPlease.js)

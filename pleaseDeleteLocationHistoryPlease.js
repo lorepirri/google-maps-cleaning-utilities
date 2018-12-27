@@ -1,3 +1,7 @@
+// This script is not really necessary, 
+// there is an option "Delete all Location History"
+// in the settings of the Location History.
+
 // Google Location History
 // 1. Go to Location History https://www.google.com/maps/timeline
 // 2. Open the Developer tools (F12, on Firefox or Chrome)
