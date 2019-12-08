@@ -11,15 +11,15 @@
   
 var pleaseDeleteContributionsPlease = function () {
 
-    var confirmDeleteContribution = function(idx) {
+    var confirmDeleteContribution = function() {
         [...document.querySelectorAll('button[class~="blue-button-text"]')].forEach( (a) => { 
             a.style.border = "thick solid red";
             a.click(); 
         });
-        setTimeout(removeMe, 5000, idx);
+        setTimeout(removeMe, 5000);
     }
         
-    var deleteContribution = function(idx) {
+    var deleteContribution = function() {
         [...document.querySelectorAll('div[role="menuitem"][class="action-menu-entry"] > div[class="action-menu-entry-text"]')].forEach( (a) => { 
             if (a.innerHTML.includes("Delete")
                 || a.innerHTML.includes("Elimina")) {
@@ -27,20 +27,22 @@ var pleaseDeleteContributionsPlease = function () {
                 a.parentElement.click(); 
             }
         });
-        setTimeout(confirmDeleteContribution, 600, idx);
+        setTimeout(confirmDeleteContribution, 600);
     }
 
-    var removeMe = function(idx) {
+    var removeMe = function() {
         
-        var elem = [...document.querySelectorAll('button[class*="action-menu"]')][0];
-        if (idx < items && elem) {
-
+        var elem = items[currentIndex];
+        if (currentIndex < numberOfItems && elem) {
+            
             elem.style.border = "thick solid red"; 
             elem.click();
 
-            console.log('task:', idx+1, 'of', items);
-
-            setTimeout(deleteContribution, 600, idx+1);
+            // goes to the next item
+            currentIndex = currentIndex + 1;
+            console.log('task:', currentIndex, 'of', numberOfItems);
+            // set to delete the item
+            setTimeout(deleteContribution, 600);
         
         } else {
             clearTimeout();
@@ -48,7 +50,10 @@ var pleaseDeleteContributionsPlease = function () {
         }  
     };
 
-    var idx=0; 
-    var items = [...document.querySelectorAll('button[class*="action-menu"]')].length;
-    removeMe(idx);
+    // these are used inside the above functions
+    var currentIndex = 0; 
+    var items = [...document.querySelectorAll('button[class*="action-menu"]')];
+    var numberOfItems = [...document.querySelectorAll('button[class*="action-menu"]')].length;
+    // start iterating through `items`
+    removeMe();
 }
