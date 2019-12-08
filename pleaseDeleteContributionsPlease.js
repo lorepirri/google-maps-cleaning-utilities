@@ -13,19 +13,16 @@ var pleaseDeleteContributionsPlease = function () {
 
     var confirmDeleteContribution = function(idx) {
         [...document.querySelectorAll('button[class~="blue-button-text"]')].forEach( (a) => { 
-            if (a.innerHTML === "Delete") {
-                a.style.border = "thick solid red";
-                a.click(); 
-            }
+            a.style.border = "thick solid red";
+            a.click(); 
         });
         setTimeout(removeMe, 5000, idx);
     }
         
     var deleteContribution = function(idx) {
-        [...document.querySelectorAll('div[class~="context-menu-entry"] div[class~="context-menu-entry-text"]')].forEach( (a) => { 
-            if (a.innerHTML === "Delete this photo" 
-                || a.innerHTML === "Delete this video"
-                || a.innerHTML === "Delete review") {
+        [...document.querySelectorAll('div[role="menuitem"][class="action-menu-entry"] > div[class="action-menu-entry-text"]')].forEach( (a) => { 
+            if (a.innerHTML.includes("Delete")
+                || a.innerHTML.includes("Elimina")) {
                 a.parentElement.style.border = "thick solid red";
                 a.parentElement.click(); 
             }
@@ -35,7 +32,7 @@ var pleaseDeleteContributionsPlease = function () {
 
     var removeMe = function(idx) {
         
-        var elem = [...document.querySelectorAll('button[aria-label*="actions"]')][0];
+        var elem = [...document.querySelectorAll('button[class*="action-menu"]')][0];
         if (idx < items && elem) {
 
             elem.style.border = "thick solid red"; 
@@ -52,6 +49,6 @@ var pleaseDeleteContributionsPlease = function () {
     };
 
     var idx=0; 
-    var items = [...document.querySelectorAll('button[aria-label*="actions"]')].length;
+    var items = [...document.querySelectorAll('button[class*="action-menu"]')].length;
     removeMe(idx);
 }
